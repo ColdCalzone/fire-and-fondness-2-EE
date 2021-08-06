@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+margin_left = 16.0
+margin_right = 56.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect_White" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -4.0
+margin_right = 24.0
+margin_bottom = 4.0
+color = Color( 0.34902, 0.337255, 0.321569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect_Black" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -23.0
+margin_top = -3.0
+margin_right = 23.0
+margin_bottom = 3.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

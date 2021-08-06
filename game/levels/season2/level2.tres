@@ -1,0 +1,46 @@
+{
+	"slug": "s2e2",
+	"flags": {
+		"joke": false,
+		"time": false,
+	},
+	"supertitle": "Season 2, Episode 2",
+	"title": "Heartmelter",
+	"subtitle": "All steamed up.",
+	"par": 47,
+	"next": "s2e3",
+	"background": "clusters",
+	"camera_offset": [-0.5, 0],
+	"tiles": [
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,3,0,0,0,0],
+		[0,0,0,0,0,0,0,5,5,4,1,5,0,0],
+		[0,0,0,0,0,3,0,2,0,5,0,2,0,4],
+		[0,0,0,0,0,3,5,3,1,5,3,3,5,4],
+		[0,0,0,0,0,3,0,2,0,5,0,2,0,3],
+		[0,0,0,0,0,0,0,4,5,5,1,4,0,0],
+		[0,0,0,0,0,0,0,0,0,3,0,0,0,0]
+	],
+	"objects": [
+		{"type":"ice","board_position":[9,5],"health":3},
+		{"type":"bomb","board_position":[12,5]},
+		{"type":"flamethrower","board_position":[11,3],"turns_until_fire":8,"turns_between_fire":8},
+		{"type":"flamethrower","board_position":[11,7],"turns_until_fire":8,"turns_between_fire":8},
+		{"type":"door","board_position":[10,3],"door_type":0,"open":false},
+		{"type":"door","board_position":[11,4],"door_type":1,"open":false},
+		{"type":"door","board_position":[11,6],"door_type":1,"open":false},
+		{"type":"door","board_position":[10,7],"door_type":2,"open":false},
+		{"type":"bomb","board_position":[8,7]},{"type":"bomb","board_position":[8,3]},
+		{"type":"door","board_position":[7,6],"door_type":3,"open":false},
+		{"type":"door","board_position":[7,4],"door_type":0,"open":true},
+		{"type":"player","board_position":[5,5],"flipped":false},
+		{"type":"partner","board_position":[13,6],"flipped":true},
+		{"type":"switch","board_position":[9,2],"door_type":3,"toggled":false},
+		{"type":"switch","board_position":[9,8],"door_type":1,"toggled":false},
+		{"type":"flower","board_position":[7,7],"index":0},
+		{"type":"switch","board_position":[5,4],"door_type":0,"toggled":false},
+		{"type":"switch","board_position":[5,6],"door_type":2,"toggled":false},
+		{"type":"door","board_position":[8,5],"door_type":1,"open":true}
+	]
+}

@@ -1,0 +1,202 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://sounds/flamethrower_fire.ogg" type="AudioStream" id=1]
+[ext_resource path="res://objects/SoundMaster.gd" type="Script" id=2]
+[ext_resource path="res://sounds/door_close.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sounds/door_open.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sounds/player_step3.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sounds/player_step1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sounds/player_step2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sounds/player_step4.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sounds/lever_pull3.ogg" type="AudioStream" id=9]
+[ext_resource path="res://sounds/lever_pull2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sounds/lever_pull1.ogg" type="AudioStream" id=11]
+[ext_resource path="res://sounds/teleport.ogg" type="AudioStream" id=12]
+[ext_resource path="res://sounds/mover_move.ogg" type="AudioStream" id=13]
+[ext_resource path="res://sounds/flower_pickup.ogg" type="AudioStream" id=14]
+[ext_resource path="res://sounds/bomb_wick.ogg" type="AudioStream" id=15]
+[ext_resource path="res://sounds/bomb_explosion.ogg" type="AudioStream" id=16]
+[ext_resource path="res://sounds/rock_break.ogg" type="AudioStream" id=17]
+[ext_resource path="res://sounds/ice_hiss.ogg" type="AudioStream" id=18]
+[ext_resource path="res://sounds/ice_melt.ogg" type="AudioStream" id=19]
+[ext_resource path="res://sounds/ui/move.wav" type="AudioStream" id=20]
+[ext_resource path="res://sounds/ui/back.wav" type="AudioStream" id=21]
+[ext_resource path="res://sounds/ui/select.wav" type="AudioStream" id=22]
+[ext_resource path="res://sounds/rewind.ogg" type="AudioStream" id=23]
+[ext_resource path="res://sounds/squish.ogg" type="AudioStream" id=24]
+[ext_resource path="res://sounds/dog_lose.ogg" type="AudioStream" id=25]
+[ext_resource path="res://sounds/dog_catch.ogg" type="AudioStream" id=26]
+[ext_resource path="res://sounds/fall.ogg" type="AudioStream" id=27]
+[ext_resource path="res://sounds/trapdoor_click.ogg" type="AudioStream" id=28]
+[ext_resource path="res://sounds/trapdoor_open.ogg" type="AudioStream" id=29]
+[ext_resource path="res://sounds/dog_alert.ogg" type="AudioStream" id=30]
+[ext_resource path="res://sounds/dog_nevermind.ogg" type="AudioStream" id=31]
+[ext_resource path="res://sounds/dog_wake.ogg" type="AudioStream" id=32]
+[ext_resource path="res://sounds/game_over.ogg" type="AudioStream" id=33]
+[ext_resource path="res://sounds/flamethrower_fake.ogg" type="AudioStream" id=34]
+[ext_resource path="res://sounds/you_win.ogg" type="AudioStream" id=35]
+[ext_resource path="res://sounds/intro.ogg" type="AudioStream" id=36]
+
+[node name="SoundMaster" type="Node"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="Audio_Flamethrower_Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "SFX"
+
+[node name="Audio_Door_Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Audio_Door_Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Audio_Player_Step1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="Audio_Player_Step2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="Audio_Player_Step3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="Audio_Player_Step4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="Audio_Switch_Pull1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="Audio_Switch_Pull2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+bus = "SFX"
+
+[node name="Audio_Switch_Pull3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="Audio_Flower_Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+bus = "SFX"
+
+[node name="Audio_Teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+bus = "SFX"
+
+[node name="Audio_Mover_Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+bus = "SFX"
+
+[node name="Audio_Bomb_Wick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+bus = "SFX"
+
+[node name="Audio_Bomb_Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+bus = "SFX"
+
+[node name="Audio_Rock_Break" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+bus = "SFX"
+
+[node name="Audio_Ice_Hiss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+bus = "SFX"
+
+[node name="Audio_Ice_Melt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+bus = "SFX"
+
+[node name="Audio_Trapdoor_Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+bus = "SFX"
+
+[node name="Audio_Trapdoor_Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+bus = "SFX"
+
+[node name="Audio_Rewind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+bus = "UI"
+
+[node name="Audio_Squish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+bus = "SFX"
+
+[node name="Audio_Fall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+bus = "SFX"
+
+[node name="Audio_Dog_Alert" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = -6.0
+bus = "SFX"
+
+[node name="Audio_Dog_Catch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -3.0
+bus = "SFX"
+
+[node name="Audio_Dog_Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -11.0
+bus = "SFX"
+
+[node name="Audio_Dog_Nevermind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+volume_db = -5.0
+bus = "SFX"
+
+[node name="Audio_Dog_Wake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
+volume_db = -5.0
+bus = "SFX"
+
+[node name="Audio_Flamethrower_Fake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+bus = "SFX"
+
+[node name="Audio_Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+volume_db = 5.0
+pitch_scale = 0.9
+bus = "UI"
+
+[node name="Audio_UI_Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = -5.0
+bus = "UI"
+
+[node name="Audio_UI_Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -5.0
+bus = "UI"
+
+[node name="Audio_UI_Back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -5.0
+bus = "UI"
+
+[node name="Audio_YouWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+bus = "BGM"
+
+[node name="Audio_GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = 5.0
+bus = "BGM"
+
+[node name="Audio_BGM_A" type="AudioStreamPlayer" parent="."]
+bus = "BGM"
+
+[node name="Audio_BGM_B" type="AudioStreamPlayer" parent="."]
+bus = "BGM"
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="finished" from="Audio_BGM_A" to="." method="_on_Audio_BGM_finished"]

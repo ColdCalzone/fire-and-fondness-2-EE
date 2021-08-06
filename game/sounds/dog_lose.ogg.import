@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dog_lose.ogg-d797b869f57f770fb771e02484c4b6bb.oggstr"
+
+[deps]
+
+source_file="res://sounds/dog_lose.ogg"
+dest_files=[ "res://.import/dog_lose.ogg-d797b869f57f770fb771e02484c4b6bb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

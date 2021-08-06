@@ -1,0 +1,47 @@
+{
+  "slug": "s3e6",
+  "flags": {
+		"joke": false,
+		"time": false,
+	},
+  "supertitle": "Season 3, Episode 6",
+  "title": "Spun Right Round",
+  "subtitle": "Gyrate it highly.",
+  "par": 21,
+  "next": "s3e7",
+  "background": "worms",
+  "camera_offset": [-0.5, 0],
+	"tutorial": {
+		"title": "Rotating Movers",
+		"body": "These movers will change direction each time they shunt someone - or somedog - around.\nCheck the markings to see whether it cycles clockwise or anti-clockwise."
+	},
+  "tiles": [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 4, 1, 3, 4, 1, 3, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0],
+    [0, 0, 0, 0, 0, 0, 0, 4, 3, 4, 3, 5, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 4, 1, 3, 4, 4, 3]
+  ],
+  "objects": [
+    {"type": "rotating_mover", "board_position": [9, 5], "direction_index": 0, "turning_direction": 1},
+    {"type": "trapdoor", "board_position": [10, 5]},
+    {"type": "trapdoor", "board_position": [9, 4]},
+    {"type": "mover", "board_position": [10, 7], "direction_index": 2},
+    {"type": "trapdoor", "board_position": [9, 6]},
+    {"type": "door", "board_position": [8, 7], "door_type": 1, "open": false},
+    {"type": "player", "board_position": [8, 5], "flipped": false},
+    {"type": "partner", "board_position": [7, 7], "flipped": false},
+    {"type": "teleporter", "board_position": [7, 5], "teleporter_type": 0},
+    {"type": "door", "board_position": [10, 3], "door_type": 0, "open": false},
+    {"type": "teleporter_target", "board_position": [12, 7], "teleporter_type": 0},
+    {"type": "flower", "board_position": [11, 7],"index":0},
+    {"type": "flamethrower", "board_position": [6, 3], "turns_until_fire": 8, "turns_between_fire": 8},
+    {"type": "door", "board_position": [7, 3], "door_type": 1, "open": true},
+    {"type": "switch", "board_position": [8, 3], "door_type": 1, "toggled": false},
+    {"type": "hourglass", "board_position": [11, 3], "door_type": 0, "toggled": false, "time_until_flip": 4, "time_between_flips": 4},
+    {"type": "pressure_plate", "board_position": [11, 5], "door_type": 1}
+  ]
+}

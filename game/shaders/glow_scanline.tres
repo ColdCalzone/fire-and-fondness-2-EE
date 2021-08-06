@@ -1,0 +1,72 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/ui/scanlines.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float scanline_alpha = 0.25;
+uniform float scanline_number = 320.0;
+uniform sampler2D scanline_texture;
+
+uniform float wipe = 0;
+
+uniform bool apply_shader = true;
+uniform bool scanlines = true;
+uniform bool screen_warp = true;
+uniform bool glow = true;
+uniform bool transition = true;
+
+void fragment() {
+	// Don't do anything if the shader is disabled in config
+	if (!apply_shader) { return; }
+	// Apply screen-bending effect
+	vec2 uv = SCREEN_UV - vec2(0.5, 0.5);
+	if (screen_warp) {
+		uv.x /= 0.125 + (sin(SCREEN_UV.y + 1.0) / 1.25);
+		uv.y /= 0.125 + (sin(SCREEN_UV.x + 1.0) / 1.25);
+	}
+	uv += vec2(0.5, 0.5);
+	// Calculate scanline
+	float scanline = 1.0;
+	// Apply scanlines
+	if (scanlines) {
+		vec3 scanline_colour = texture(scanline_texture, uv).rgb;
+		scanline = 1.0 - (scanline_colour.r * scanline_alpha);
+	}
+	// Apply screen-wipe transition
+	if (transition) {
+		float half_wipe = wipe;
+		if (uv.y < wipe) uv.y = wipe;
+	}
+	// Soften the image slightly, and have two blurry layers tinted blue to create a glow effect
+	if (glow) {
+		vec3 blur2 = textureLod(SCREEN_TEXTURE, uv, 4.0).rgb * 0.5;
+		vec3 blur1 = textureLod(SCREEN_TEXTURE, uv, 2.0).rgb * 0.5;
+		vec3 pic = textureLod(SCREEN_TEXTURE, uv, 0.5).rgb * 0.5;
+		blur2.r /= 2.0;
+		blur2.g /= 1.5;
+		blur1.r /= 3.0;
+		blur1.g /= 1.0;
+		COLOR.rgb = (blur1 + blur2 + pic);
+	}
+	else {
+		COLOR.rgb = textureLod(SCREEN_TEXTURE, uv, 0.0).rgb;
+	}
+	COLOR.rgb *= scanline;
+	// If we're off the edge of the screen, output black to avoid the leaking effect
+	if (uv.x >= 1.0 || uv.y >= 1.0
+	|| uv.x <= 0.0 || uv.y <= 0.0) { COLOR = vec4(0, 0, 0, 1); }
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/scanline_alpha = 0.25
+shader_param/scanline_number = 320.0
+shader_param/wipe = 0.0
+shader_param/apply_shader = true
+shader_param/scanlines = true
+shader_param/screen_warp = true
+shader_param/glow = true
+shader_param/transition = true
+shader_param/scanline_texture = ExtResource( 1 )

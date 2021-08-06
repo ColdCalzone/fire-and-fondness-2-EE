@@ -1,0 +1,49 @@
+{
+	"slug": "s1e5",
+	"flags": {
+		"joke": false,
+		"time": false,
+	},
+	"supertitle": "Season 1, Episode 5",
+	"title": "Love's a Blast",
+	"subtitle": "And cleanup's a mess.",
+	"par": 28,
+	"next": "s1e6",
+	"background": "mines",
+	"camera_offset": [-0.5, 0.0],
+	"tutorial": {
+		"title": "Bombs & Rocks",
+		"body": "Bombs will explode when lit by fire, destroying anything next to them, from rocks to foolhardy game-show contestants."
+	},
+	"tiles": [
+		[0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,5,1,4,0,5,0,0],
+		[0,0,0,0,0,0,0,0,2,0,2,0,0],
+		[0,0,0,0,0,0,3,1,4,5,4,0,3],
+		[0,0,0,0,0,0,0,0,0,0,4,0,2],
+		[0,0,0,0,0,0,0,0,5,1,3,1,4]
+	],
+	"objects": [
+		{"type":"bomb","board_position":[10,6]},
+		{"type":"rock","board_position":[10,5],"destroyed":false},
+		{"type":"door","board_position":[11,7],"door_type":0,"open":false},
+		{"type":"switch","board_position":[10,7],"door_type":0,"toggled":false},
+		{"type":"door","board_position":[9,7],"door_type":1,"open":false},
+		{"type":"switch","board_position":[9,5],"door_type":0,"toggled":false},
+		{"type":"switch","board_position":[12,7],"door_type":1,"toggled":false},
+		{"type":"switch","board_position":[8,7],"door_type":2,"toggled":false},
+		{"type":"door","board_position":[8,4],"door_type":0,"open":false},
+		{"type":"player","board_position":[8,5],"flipped":false},
+		{"type":"door","board_position":[7,5],"door_type":3,"open":true},
+		{"type":"flamethrower","board_position":[6,5],"turns_until_fire":8,"turns_between_fire":8},
+		{"type":"switch","board_position":[8,3],"door_type":3,"toggled":false},
+		{"type":"door","board_position":[7,3],"door_type":2,"open":false},
+		{"type":"flower","board_position":[6,3],"index":0},
+		{"type":"door","board_position":[10,4],"door_type":1,"open":false},
+		{"type":"partner","board_position":[10,3],"flipped":true},
+		{"type":"door","board_position":[12,6],"door_type":2,"open":true},
+		{"type":"flamethrower","board_position":[12,5],"turns_until_fire":8,"turns_between_fire":8}
+	]
+}

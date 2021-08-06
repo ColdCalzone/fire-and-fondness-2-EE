@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/fire.png" type="Texture" id=1]
+[ext_resource path="res://objects/board/Fire.gd" type="Script" id=2]
+
+[node name="Fire" type="Sprite" groups=[
+"fire",
+]]
+z_index = 30
+texture = ExtResource( 1 )
+centered = false
+hframes = 6
+script = ExtResource( 2 )
+
+[node name="Timer_Spread" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="timeout" from="Timer_Spread" to="." method="_on_Timer_Spread_timeout"]

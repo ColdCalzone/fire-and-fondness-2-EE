@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/paragraph_bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/paragraph.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/LevelIntro.gd" type="Script" id=3]
+
+[node name="LevelIntro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Supertitle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -28.0
+margin_right = 160.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 320, 20 )
+rect_pivot_offset = Vector2( 160, 8 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Season 1, Episode 3"
+align = 1
+valign = 2
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -800.0
+margin_top = -7.99998
+margin_right = -480.0
+margin_bottom = 8.00002
+rect_min_size = Vector2( 320, 16 )
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 160, 8 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Thy Feelings Conveyed"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Subtitle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 400.0
+margin_top = 12.0
+margin_right = 880.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 480, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "A truly moving experience."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

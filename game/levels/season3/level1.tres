@@ -1,0 +1,47 @@
+{
+	"slug": "s3e1",
+	"flags": {
+		"joke": false,
+		"time": false,
+	},
+	"supertitle": "Season 3, Episode 1",
+	"title": "My Glass, Hourglass",
+	"subtitle": "Tick, tock...",
+	"par": 21,
+	"next": "s3e2",
+	"background": "mines",
+	"camera_offset": [0.0, 0.0],
+	"tutorial": {
+		"title": "Welcome back, my friends!",
+		"body": "We're introducing some new toys this season!\nFirst up, the hourglass: it acts like a switch, but it'll flip back after a few turns.\nDon't be standing in a doorway when it closes..."
+	},
+	"tiles": [
+		[0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,5,0],
+		[0,0,0,0,0,0,0,0,0,0,0,2,0],
+		[0,0,0,0,0,0,0,4,0,5,5,5,4],
+		[0,0,0,0,0,0,0,2,0,0,0,0,2],
+		[0,0,0,0,0,0,0,4,1,4,5,0,5],
+		[0,0,0,0,0,0,0,0,0,0,2,0,0],
+		[0,0,0,0,0,0,0,0,4,1,5,0,0]
+	],
+	"objects": [
+		{"type": "door", "board_position": [7,5], "door_type": 0, "open": false},
+		{"type": "partner","board_position": [7,4],"flipped": false},
+		{"type": "hourglass","board_position": [9,6],"door_type": 0,"toggled": false,"time_until_flip": 4,"time_between_flips": 4},
+		{"type": "door","board_position": [8,6],"door_type": 0,"open": true},
+		{"type": "teleporter_target","board_position": [10,6],"teleporter_type": 0},
+		{"type": "door","board_position": [12,5],"door_type": 0,"open": false},
+		{"type": "switch","board_position": [12,6],"door_type": 0,"toggled": false},
+		{"type": "player","board_position": [10,4],"flipped": false},
+		{"type": "teleporter","board_position": [9,4],"teleporter_type": 0},
+		{"type": "hourglass","board_position": [12,4],"door_type": 0,"toggled": false,"time_until_flip": 4,"time_between_flips": 4},
+		{"type": "door","board_position": [10,7],"door_type": 0,"open": true},
+		{"type": "door","board_position": [9,8],"door_type": 1,"open": false},
+		{"type": "teleporter","board_position": [8,8],"teleporter_type": 0},
+		{"type": "door","board_position": [11,3],"door_type": 0,"open": false},
+		{"type": "flower","board_position": [10,8],"index":0},
+		{"type": "switch","board_position": [11,2],"door_type": 1,"toggled": false}
+	]
+}

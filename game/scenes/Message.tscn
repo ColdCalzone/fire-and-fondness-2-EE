@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Message.gd" type="Script" id=1]
+[ext_resource path="res://objects/Menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/paragraph_bold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/paragraph.tres" type="DynamicFont" id=4]
+[ext_resource path="res://objects/backgrounds/Squares.tscn" type="PackedScene" id=5]
+
+[node name="SeasonEnd" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_Squares" parent="." instance=ExtResource( 5 )]
+
+[node name="Center_Message" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_Outline" type="ColorRect" parent="Center_Message"]
+margin_top = 30.0
+margin_right = 640.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 640, 240 )
+color = Color( 0.34902, 0.337255, 0.321569, 1 )
+
+[node name="Background_Fill" type="ColorRect" parent="Center_Message/Background_Outline"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = -1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Center_Message"]
+margin_left = 60.0
+margin_top = 87.0
+margin_right = 580.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 520, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Title" type="Label" parent="Center_Message/VBox"]
+margin_right = 520.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Title of Season End Message"
+align = 1
+
+[node name="Label_Body" type="Label" parent="Center_Message/VBox"]
+margin_top = 20.0
+margin_right = 520.0
+margin_bottom = 125.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "You completed the season! Now we need to write some text to further heighten the tremendous sense of achievement, and maybe also throw in a little bit of worldbuilding.
+I'm not sure exactly how much stuff I'll put in each message, so I just want to make sure I don't overflow the box. So I need to write a fair bit here, which is a bit tricky when you've no idea what to write. Is there such a thing as \"blank canvas syndrome\"? Because there should be."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center_Menu" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 360.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="Center_Menu" instance=ExtResource( 2 )]
+margin_left = 320.0
+margin_top = 60.0
+margin_right = 320.0
+margin_bottom = 60.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer_Typewriter" type="Timer" parent="."]
+one_shot = true
+[connection signal="button_pressed" from="Center_Menu/Menu" to="." method="_on_Menu_button_pressed"]
+[connection signal="timeout" from="Timer_Typewriter" to="." method="_on_Timer_Typewriter_timeout"]

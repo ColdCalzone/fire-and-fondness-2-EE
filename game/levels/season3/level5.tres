@@ -1,0 +1,46 @@
+{
+	"slug": "s3e5",
+	"flags": {
+		"joke": false,
+		"time": false,
+	},
+	"supertitle": "Season 3, Episode 5",
+	"title": "Three's a Crowd",
+	"subtitle": "(Except when it isn't.)",
+	"par": 14,
+	"next": "s3e6",
+	"background": "clusters",
+	"camera_offset": [0, 0],
+	"tutorial": {
+		"title": "In-laws",
+		"body": "Ah. We were a bit worried this would happen.\nYour dear love's mother appears to be wandering about the set. Don't let catch you and talk your ear off - but don't let her get burned, either."
+	},
+	"tiles": [
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,3,4,0,0,0,0,0,0],
+		[0,0,0,0,0,0,2,0,3,1,4,4,0,0],
+		[0,0,0,0,0,0,5,5,5,0,0,5,0,0],
+		[0,0,0,0,0,0,0,0,5,0,0,3,1,5],
+		[0,0,0,0,0,0,0,0,4,4,3,4,0,5],
+		[0,0,0,0,0,0,0,0,0,0,2,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,5,0,0,0]
+	],
+	"objects": [
+		{"type": "partner", "board_position": [13,6], "flipped": true},
+		{"type": "mover", "board_position": [10,6], "direction_index": 1},
+		{"type": "door", "board_position": [10,7], "door_type": 0, "open": true},
+		{"type": "door", "board_position": [12,5], "door_type": 0, "open": true},
+		{"type": "player", "board_position": [6,4], "flipped": false},
+		{"type": "inlaw", "board_position": [10,3]},
+		{"type": "door", "board_position": [6,3], "door_type": 1, "open": false},
+		{"type": "flower", "board_position": [6,2],"index":0},
+		{"type": "hourglass", "board_position": [8,4], "door_type": 0, "toggled": false, "time_until_flip": 4, "time_between_flips": 4},
+		{"type": "door", "board_position": [9,3], "door_type": 0, "open": false},
+		{"type": "flamethrower", "board_position": [10,8], "turns_until_fire": 8, "turns_between_fire": 8},
+		{"type": "hourglass", "board_position": [11,4], "door_type": 0, "toggled": false, "time_until_flip": 4, "time_between_flips": 4},
+		{"type": "switch", "board_position": [11,3], "door_type": 1, "toggled": false},
+		{"type": "teleporter", "board_position":[7,2], "teleporter_type":0},
+		{"type": "teleporter_target", "board_position": [11,6], "teleporter_type": 0}
+	]
+}

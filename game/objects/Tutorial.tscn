@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/paragraph_bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/paragraph.tres" type="DynamicFont" id=2]
+[ext_resource path="res://objects/Tutorial.gd" type="Script" id=3]
+
+[node name="Tutorial" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 360.0
+margin_bottom = 360.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rect_Outline" type="ColorRect" parent="Center"]
+margin_left = 160.0
+margin_top = 114.0
+margin_right = 480.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 320, 130 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color( 0.34902, 0.337255, 0.321569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rect_Inner" type="ColorRect" parent="Center/Rect_Outline"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Center/Rect_Outline/Rect_Inner"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Title" type="Label" parent="Center/Rect_Outline/Rect_Inner/VBox"]
+margin_right = 300.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 14 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Title of Tutorial"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label_Body" type="Label" parent="Center/Rect_Outline/Rect_Inner/VBox"]
+margin_top = 18.0
+margin_right = 300.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "This is a tutorial. It will tell you many useful things that you may want to know. However, it shouldn't be too long, because we don't want the players to spend ages reading between every level."
+align = 3
+valign = 1
+autowrap = true
+
+[node name="Label_Prompt" type="Label" parent="Center/Rect_Outline/Rect_Inner/VBox"]
+margin_top = 91.0
+margin_right = 300.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0.133333, 0.12549, 0.203922, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Press any key to continue"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Tween" type="Tween" parent="."]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/characters.png" type="Texture" id=1]
+[ext_resource path="res://objects/board/Player.gd" type="Script" id=2]
+
+[node name="Player" type="Node2D" groups=[
+"board_object",
+"character",
+"chasable",
+"player",
+]]
+z_index = 10
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8, 16 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Tween" type="Tween" parent="."]

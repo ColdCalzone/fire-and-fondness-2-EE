@@ -1,0 +1,52 @@
+{
+	"slug": "s3e3",
+	"flags": {
+		"joke": false,
+		"time": false,
+	},
+	"supertitle": "Season 3, Episode 3",
+	"title": "Right Time, Right Place",
+	"subtitle": "Too much on your plate?",
+	"par": 23,
+	"next": "s3e4",
+	"background": "diamonds",
+	"camera_offset": [0,0],
+	"tutorial": {
+		"title": "Step On, Step Off",
+		"body": "One of our engineers came up with this rather novel piece of home security: a doormat that acts as a switch while you're stepping on it!\nHappily, the set is already perfectly secure, which, given the aforementioned doormat, is probably a good thing..."
+	},
+	"tiles": [
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,4,5,0,5,5,0,0,0,0],
+		[0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,0],
+		[0,0,0,0,0,5,1,4,4,4,3,3,1,3,1,4],
+		[0,0,0,0,0,0,0,0,0,5,0,0,0,3,0,0],
+		[0,0,0,0,0,0,0,4,3,3,1,5,0,4,0,0],
+		[0,0,0,0,0,0,0,5,0,2,0,4,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0]
+	],
+	"objects": [
+		{"type":"flamethrower","board_position":[8,2],"turns_until_fire":8,"turns_between_fire":8},
+		{"type":"flamethrower","board_position":[9,8],"turns_until_fire":8,"turns_between_fire":8},
+		{"type":"door","board_position":[9,7],"door_type":0,"open":true},
+		{"type":"door","board_position":[10,6],"door_type":0,"open":false},
+		{"type":"door","board_position":[12,4],"door_type":0,"open":false},
+		{"type":"door","board_position":[6,4],"door_type":2,"open":false},
+		{"type":"door","board_position":[11,3],"door_type":2,"open":false},
+		{"type":"door","board_position":[14,4],"door_type":2,"open":true},
+		{"type":"door","board_position":[7,3],"door_type":1,"open":true},
+		{"type":"switch","board_position":[7,4],"door_type":1,"toggled":false},
+		{"type":"switch","board_position":[7,6],"door_type":2,"toggled":false},
+		{"type":"switch","board_position":[13,5],"door_type":0,"toggled":false},
+		{"type":"teleporter","board_position":[15,4],"teleporter_type":0},
+		{"type":"teleporter","board_position":[5,4],"teleporter_type":1},
+		{"type":"teleporter_target","board_position":[11,7],"teleporter_type":0},
+		{"type":"teleporter_target","board_position":[13,6],"teleporter_type":1},
+		{"type":"flower","board_position":[11,6],"index":0},
+		{"type":"mover","board_position":[7,7],"direction_index":0},
+		{"type":"pressure_plate","board_position":[9,6],"door_type":0},
+		{"type":"partner","board_position":[10,2],"flipped":false},
+		{"type":"player","board_position":[10,4],"flipped":true}
+	]
+}

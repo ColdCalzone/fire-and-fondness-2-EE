@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/characters.png" type="Texture" id=1]
+[ext_resource path="res://objects/board/Partner.gd" type="Script" id=2]
+
+[node name="Partner" type="Node2D" groups=[
+"board_object",
+"partner",
+]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/trapdoor_click.ogg-7fabec400160b821e739133a29b37e88.oggstr"
+
+[deps]
+
+source_file="res://sounds/trapdoor_click.ogg"
+dest_files=[ "res://.import/trapdoor_click.ogg-7fabec400160b821e739133a29b37e88.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

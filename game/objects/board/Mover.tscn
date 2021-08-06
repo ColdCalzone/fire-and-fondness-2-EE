@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/mover.png" type="Texture" id=1]
+[ext_resource path="res://objects/board/Mover.gd" type="Script" id=2]
+
+[node name="Mover" type="Node2D" groups=[
+"board_object",
+"mover",
+]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+hframes = 4
+frame = 12
+region_rect = Rect2( 0, 0, 16, 16 )

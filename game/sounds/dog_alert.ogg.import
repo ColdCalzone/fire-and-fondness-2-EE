@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dog_alert.ogg-5d222105374568e0b9d1d00c730e807c.oggstr"
+
+[deps]
+
+source_file="res://sounds/dog_alert.ogg"
+dest_files=[ "res://.import/dog_alert.ogg-5d222105374568e0b9d1d00c730e807c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

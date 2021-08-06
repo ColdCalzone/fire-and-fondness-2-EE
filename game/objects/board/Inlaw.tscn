@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/board/Inlaw.gd" type="Script" id=1]
+[ext_resource path="res://sprites/inlaw.png" type="Texture" id=2]
+
+[node name="Inlaw" type="Node2D" groups=[
+"board_object",
+"character",
+"inlaw",
+]]
+z_index = 7
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8, 16 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -8 )
+region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="Tween" type="Tween" parent="."]

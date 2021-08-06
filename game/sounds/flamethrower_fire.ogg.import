@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flamethrower_fire.ogg-6f0c875e80339693379703727b4ad512.oggstr"
+
+[deps]
+
+source_file="res://sounds/flamethrower_fire.ogg"
+dest_files=[ "res://.import/flamethrower_fire.ogg-6f0c875e80339693379703727b4ad512.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

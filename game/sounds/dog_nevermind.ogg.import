@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dog_nevermind.ogg-5f3bb791093088b23f130ca4f41c775f.oggstr"
+
+[deps]
+
+source_file="res://sounds/dog_nevermind.ogg"
+dest_files=[ "res://.import/dog_nevermind.ogg-5f3bb791093088b23f130ca4f41c775f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

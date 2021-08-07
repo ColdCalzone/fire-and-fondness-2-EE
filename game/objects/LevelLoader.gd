@@ -135,8 +135,6 @@ func place_object(object_data : Dictionary) -> void:
 				object.open = object_data["open"]
 	# Finally, add it to the scene
 	board.add_child(object)
-	if object_data.type == "trapdoor":
-		print(object.state)
 	object.set_board(board)
 	object.refresh_on_board()
 
@@ -150,9 +148,12 @@ func load_level(data : Dictionary) -> void:
 		Levels.joke_level = data["flags"]["joke"]
 		# Does the level have frozen time?
 		Levels.time_level = data["flags"]["time"]
+		# just a crappy lil' last minute hack.
+		Levels.lol_level = data["flags"].has("s6jokeend")
 	else:
 		Levels.joke_level = false
 		Levels.time_level = false
+		Levels.lol_level = false
 	# Now actually make the level
 	place_tiles(data["tiles"])
 	place_objects(data["objects"])

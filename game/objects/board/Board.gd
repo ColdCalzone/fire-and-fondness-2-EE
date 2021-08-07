@@ -5,6 +5,9 @@ class_name Board
 const OBJ_YOUWIN = preload("res://objects/YouWin.tscn")
 const OBJ_GAMEOVER = preload("res://objects/GameOver.tscn")
 
+const OBJ_MENU = preload("res://objects/Menu.tscn")
+var bully_popup 
+
 const EXPORT_AREA : Rect2 = Rect2(0, 0, 18, 9)
 const TILE_SIZE : float = 16.0
 
@@ -33,6 +36,7 @@ var title : String = "Level title here"
 var subtitle : String = "Witty quip here"
 var joke : bool = false
 var time : bool = false
+var s6jokeend : bool = false
 var camera_offset_x : int = 1
 var camera_offset_y : int = 1
 var current_bg : int = 0
@@ -217,6 +221,13 @@ func player_move_start() -> void:
 			player.can_move = true
 		get_tree().call_group("board_object", "save_state")
 		stuck_players = 0
+		if Levels.lol_level:
+			var all_player_steps: int
+			for player in get_tree().get_nodes_in_group("player"):
+				all_player_steps = all_player_steps + player.steps_taken
+			if all_player_steps >= 64:
+				bully_player()
+				
 
 func has_player_won() -> bool:
 	for player in get_tree().get_nodes_in_group("player"):
@@ -347,6 +358,157 @@ func get_map_size() -> Vector2:
 		result.y = max(result.y, tile.y+1)
 	return result
 
+func bully_player():
+	set_process_input(false)
+	bully_popup = OBJ_MENU.instance()
+	var center = CenterContainer.new()
+	center.rect_size = Vector2(640, 360)
+	ui.add_child(center)
+	center.rect_position = Vector2.ZERO
+	center.add_child(bully_popup)
+	center.rect_scale = Vector2(0.5, 0.5)
+	bully_popup.items = {
+		"menu1" : {
+			"type" : "menu",
+			"children" : ["bullying1", "yeah1"]
+		},
+		"menu2" : {
+			"type" : "menu",
+			"children" : ["bullying2", "yeah2"]
+		},
+		"menu3" : {
+			"type" : "menu",
+			"children" : ["bullying3", "yeah3"]
+		},
+		"menu4" : {
+			"type" : "menu",
+			"children" : ["bullying4", "yeah4"]
+		},
+		"menu5" : {
+			"type" : "menu",
+			"children" : ["bullying5", "yeah5", "no5"]
+		},
+		"menu6" : {
+			"type" : "menu",
+			"children" : ["bullying6", "yeah6"]
+		},
+		"menu7" : {
+			"type" : "menu",
+			"children" : ["bullying7", "yeah7"]
+		},
+		"menu8" : {
+			"type" : "menu",
+			"children" : ["bullying8", "yeah8"]
+		},
+		"bullying1": {
+			"type" : "text",
+			"label" : "You seem to be in a biiiit of a pickle, eh?"
+		},
+		"yeah1": {
+			"type" : "button",
+			"label" : "Maybe."
+		},
+		"bullying2": {
+			"type" : "text",
+			"label" : "You've been faffing about in this one spot for about 64 steps now. Nice and even."
+		},
+		"yeah2": {
+			"type" : "button",
+			"label" : "Get on with it."
+		},
+		"bullying3": {
+			"type" : "text",
+			"label" : "Wow, impatient much?"
+		},
+		"yeah3": {
+			"type" : "button",
+			"label" : "Come on."
+		},
+		"bullying4": {
+			"type" : "text",
+			"label" : "Fine. Well I can get you out of here, for good"
+		},
+		"yeah4": {
+			"type" : "button",
+			"label" : "Really now?"
+		},
+		"bullying5": {
+			"type" : "text",
+			# Wish the newlines worked
+			"label" : """Of course, you just need to give me your soul, an arm,
+			the rights to produce figurines of you..."""
+		},
+		"yeah5": {
+			"type" : "button",
+			"label" : "Sure!"
+		},
+		"no5": {
+			"type" : "button",
+			"label" : "Eh..."
+		},
+		"bullying6": {
+			"type" : "text",
+			"label" : "Glad to see this agreement is most agreeable."
+		},
+		"yeah6": {
+			"type" : "button",
+			"label" : "Wait"
+		},
+		"bullying7": {
+			"type" : "text",
+			"label" : """Presto! You're out! Be with your sweetheart,
+			you don't need this stupid show for that"""
+		},
+		"yeah7": {
+			"type" : "button",
+			"label" : "Aw thanks :)"
+		},
+		"bullying8": {
+			"type" : "text",
+			"label" : "You need OUR show for that!"
+		},
+		"yeah8": {
+			"type" : "button",
+			"label" : "God Dammit"
+		}
+	}
+	bully_popup.current_item = "menu1"
+	bully_popup.current_child = 1
+	bully_popup.move_cursor()
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu2"
+	bully_popup.current_child = 1
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu3"
+	bully_popup.current_child = 1
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu4"
+	bully_popup.current_child = 1
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu5"
+	bully_popup.current_child = 1
+	bully_popup.move_cursor()
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu6"
+	bully_popup.current_child = 1
+	bully_popup.move_cursor()
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu7"
+	bully_popup.current_child = 1
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	bully_popup.current_item = "menu8"
+	bully_popup.current_child = 1
+	bully_popup.rect_position = Vector2(160, 90) - (bully_popup.rect_size/4)
+	yield(bully_popup, "button_pressed")
+	player_won()
+
 func _ready():
 	player_controller.connect("player_moved", self, "player_moved")
 
@@ -371,6 +533,7 @@ func level_to_json() -> Dictionary:
 		"flags": {
 			"joke": joke,
 			"time": time,
+			"s6jokeend": s6jokeend,
 		},
 		"supertitle": "Season "+String(season+1)+", Episode "+String(episode+1),
 		"title": title,

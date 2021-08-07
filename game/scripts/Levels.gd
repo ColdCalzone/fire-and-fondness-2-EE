@@ -5,6 +5,7 @@ onready var editing_level = null
 onready var current_scene : String = ""
 var joke_level : bool = false
 var time_level : bool = false
+var lol_level : bool = false
 
 const season_files : Array = [
 	"res://levels/season1.tres",

@@ -33,6 +33,8 @@ var state_stack : Array
 
 var distance_from_dog = 0
 
+var turned : bool = false
+
 func wiggle_wake() -> void:
 	tween.interpolate_property(sprite, "scale", Vector2(1.0, 0.5), Vector2(1.0, 1.0), 0.25, Tween.TRANS_CIRC, Tween.EASE_OUT)
 	tween.start()
@@ -146,6 +148,14 @@ func can_act() -> bool:
 			# Change direction if needed/able
 			if not can_move_to(candidate, moving_direction):
 				choose_new_direction()
+			if not turned:
+				var directions : int
+				for direction in FOUR_DIRECTIONS:
+					if can_move_to(board_position + direction, direction) and direction != -moving_direction:
+						directions += 1
+				if directions > 1:
+					choose_new_direction()
+					turned = true
 			# Move if able
 			candidate = board_position + moving_direction
 			if can_move_to(candidate, moving_direction):
@@ -159,6 +169,7 @@ func can_act() -> bool:
 				if distance_from_dog >= 4:
 					behaviour_state = BEHAVIOUR_STATE.JUST_SEEN
 					distance_from_dog = 0
+					turned = false
 			else:
 				distance_from_dog = 0
 			try_to_catch_player()
@@ -258,7 +269,7 @@ func refresh_on_board() -> void:
 		sprite.texture = SPRITE
 
 func save_state() -> void:
-	state_stack.push_back([board_position, behaviour_state, target_position, moving_direction, distance_from_dog])
+	state_stack.push_back([board_position, behaviour_state, target_position, moving_direction, distance_from_dog, turned])
 
 func revert_to_previous_state() -> void:
 	if state_stack.size() > 1:
@@ -268,6 +279,7 @@ func revert_to_previous_state() -> void:
 	target_position = state_stack.back()[2]
 	moving_direction = state_stack.back()[3]
 	distance_from_dog = state_stack.back()[4]
+	turned = state_stack.back()[5]
 	refresh_on_board()
 
 func to_json() -> Dictionary:

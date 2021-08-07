@@ -840,6 +840,9 @@ func load_data_from_file(json) -> void:
 	board.subtitle = json["subtitle"]
 	board.joke = json["flags"]["joke"] if json.has("flags") else false
 	board.time = json["flags"]["time"] if json.has("flags") else false
+	if json.has("flags"):
+		if json["flags"].has("s6jokeend"):
+			board.s6jokeend = json["flags"]["s6jokeend"]
 	board.par = json["par"]
 	board.camera_offset_x = (json["camera_offset"][0]*2)+1
 	board.camera_offset_y = (json["camera_offset"][1]*2)+1
@@ -880,6 +883,7 @@ func _ready() -> void:
 		board.subtitle = Levels.editing_level["subtitle"]
 		board.joke = Levels.editing_level["flags"]["joke"]
 		board.time = Levels.editing_level["flags"]["time"]
+		board.s6jokeend = Levels.editing_level["flags"]["s6jokeend"]
 		board.par = Levels.editing_level["par"]-1
 		board.camera_offset_x = (Levels.editing_level["camera_offset"][0]*2)+1
 		board.camera_offset_y = (Levels.editing_level["camera_offset"][1]*2)+1

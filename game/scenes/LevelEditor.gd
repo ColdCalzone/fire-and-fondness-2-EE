@@ -612,6 +612,7 @@ func json_to_png(input : String) -> Image:
 	#for x in input.to_ascii():
 	#	bytes.append(x)
 	var bytes : PoolByteArray = input.to_ascii()
+	bytes.append_array("j".to_ascii())
 	var max_width : int = bytes.size() + bytes.size() % 3
 	var img : Image = Image.new()
 	var width : int = max_width/3
@@ -627,8 +628,16 @@ func json_to_png(input : String) -> Image:
 func png_to_json(img : Image) -> String:
 	img.lock()
 	var bytes : PoolByteArray = PoolByteArray()
+	var test_header_c = img.get_pixel(0, 0)
+	var skip := false
+	if String(PoolByteArray([test_header_c.r8, test_header_c.g8, test_header_c.b8])) == "c":
+		img.unlock()
+		return cart_to_json(img)
+	elif String(PoolByteArray([test_header_c.r8, test_header_c.g8, test_header_c.b8])) == "j":
+		skip = true
 	for y in range(img.get_height()):
 		for x in range(img.get_width()):
+			if x == 0 and y == 0 and skip: continue
 			var c : Color = img.get_pixel(x, y)
 			bytes.append_array([c.r8, c.g8, c.b8])
 	img.unlock()
@@ -637,12 +646,16 @@ func png_to_json(img : Image) -> String:
 func cart_to_json(cart : Image):
 	var bytes : PoolByteArray = cart.get_data()
 	var data : PoolByteArray = PoolByteArray([])
-	
 	cart.lock()
+	var test_header_c = cart.get_pixel(0, 0)
+	var skip := false
+	if String(PoolByteArray([test_header_c.r8, test_header_c.g8, test_header_c.b8])) == "j":
+		skip = true
 	var starting_height : int = 0
 	for y in range(cart.get_height()):
 		var done = false
 		for x in range(cart.get_width()):
+			if x == 0 and y == 0 and skip: continue
 			var c : Color = cart.get_pixel(x, y)
 			if (c.r8 + c.g8 + c.b8) > 0:
 				starting_height += c.r8 + c.g8 + c.b8
@@ -664,6 +677,7 @@ func png_to_cart(label : Image, data : String):
 	var level_data : PoolByteArray = data.to_ascii()
 	bytes.append_array(level_data)
 	var pointer : PoolByteArray = []
+	pointer.append_array("c".to_ascii())
 	var remaining_height = label.get_height()
 	while remaining_height > 0:
 		pointer.append(min(remaining_height, 255))

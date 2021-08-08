@@ -533,6 +533,7 @@ func level_to_json() -> Dictionary:
 		"flags": {
 			"joke": joke,
 			"time": time,
+			"s6jokeend": s6jokeend,
 		},
 		"supertitle": "Season "+String(season+1)+", Episode "+String(episode+1),
 		"title": title,

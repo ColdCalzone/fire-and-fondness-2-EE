@@ -626,6 +626,10 @@ func json_to_png(input : String) -> Image:
 
 func png_to_json(img : Image) -> String:
 	img.lock()
+	var cart_test : Color = img.get_pixel(0, 0)
+	if PoolByteArray([cart_test.r8, cart_test.g8]).get_string_from_ascii() != "{\"":
+		img.unlock()
+		return cart_to_json(img)
 	var bytes : PoolByteArray = PoolByteArray()
 	for y in range(img.get_height()):
 		for x in range(img.get_width()):
